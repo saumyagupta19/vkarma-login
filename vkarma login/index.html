@@ -20,7 +20,10 @@
 			<p>Username</p>
 			<input type="text" name="" placeholder="Username">
 			<p>Password</p>
-			<input type="password" name="" placeholder="Password">
+			<div class="container">
+				<i class="fa fa-eye" id="eye"></i>
+			</div>
+			<input type="password" id="pwd" name="" placeholder="Password">
 			<input type="submit" name="" value="Login">
 			<a href="#">Lost your password?</a>
 		</form>
@@ -34,5 +37,19 @@
 		</span>
 		</div>
 	</footer>
+
+	<script type="text/javascript">
+		var pwd =document.getElementById('pwd');
+		var eye =document.getElementById('eye');
+
+		eye.addEventListener('click',togglePass);
+
+		function togglePass(){
+			eye.classList.toggle('active');
+
+			(pwd.type =='password') ? pwd.type = 'text' :
+			pwd.type = 'password';
+		}
+	</script>
 </body>
 </html>
